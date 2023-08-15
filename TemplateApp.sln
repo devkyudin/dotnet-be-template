@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D1792709-A71D-4A6D-8E73-0932B61F3BE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AB81D57F-D317-4FBA-AB0A-6DAE1E84E4E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmarks", "benchmarks", "{F4312787-6FCD-4E7D-B4A6-B52E2B61E3B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{DF5D0E16-77E8-48C2-BCF7-863AF516E391}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		LICENSE = LICENSE
+		README.md = README.md
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateApp.Presentation", "src\TemplateApp.Presentation\TemplateApp.Presentation.csproj", "{039BFC68-A2ED-4F7F-B0BF-0189B8F36DEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{039BFC68-A2ED-4F7F-B0BF-0189B8F36DEA} = {D1792709-A71D-4A6D-8E73-0932B61F3BE6}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{039BFC68-A2ED-4F7F-B0BF-0189B8F36DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{039BFC68-A2ED-4F7F-B0BF-0189B8F36DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{039BFC68-A2ED-4F7F-B0BF-0189B8F36DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{039BFC68-A2ED-4F7F-B0BF-0189B8F36DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
