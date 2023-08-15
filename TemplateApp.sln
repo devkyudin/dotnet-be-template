@@ -13,7 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{DF5D0E
 		LICENSE = LICENSE
 		README.md = README.md
 		.gitignore = .gitignore
-		docker-compose.yml = docker-compose.yml
+		infrastructure-services.yml = infrastructure-services.yml
+		infrastructure-tools.yml = infrastructure-tools.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateApp.Presentation", "src\TemplateApp.Presentation\TemplateApp.Presentation.csproj", "{039BFC68-A2ED-4F7F-B0BF-0189B8F36DEA}"
