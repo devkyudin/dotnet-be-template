@@ -475,3 +475,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+.idea/.idea.TemplateApp/.idea/.name
+.idea/.idea.TemplateApp/.idea/encodings.xml
+.idea/.idea.TemplateApp/.idea/indexLayout.xml
+.idea/.idea.TemplateApp/.idea/vcs.xml
