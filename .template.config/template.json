@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Konstantin Iudin",
+  "classifications": [ "Common", "Web" ],
+  "identity": "TemplateApp",
+  "name": "'Clean code'-like simple backend web application",
+  "shortName": "be-app",
+  "sourceName": "TemplateApp",
+  "tags": {
+    "type": "solution",
+    "language": "C#"
+  }
+}
