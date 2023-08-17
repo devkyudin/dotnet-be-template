@@ -3,7 +3,7 @@
   "author": "Konstantin Iudin",
   "classifications": [ "Common", "Web" ],
   "identity": "TemplateApp",
-  "name": "'Clean code'-like simple backend web application",
+  "name": "Clean code backend web application",
   "shortName": "be-app",
   "sourceName": "TemplateApp",
   "tags": {
