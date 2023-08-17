@@ -9,5 +9,25 @@
   "tags": {
     "type": "solution",
     "language": "C#"
-  }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            ".idea/**",
+            ".vscode/**",
+            ".vs/**",
+            ".DS_Store/**",
+            ".git/**",
+            "**/.idea/**",
+            "**/.vscode/**",
+            "**/.vs/**",
+            "**/.DS_Store/**",
+            "**/.git/**"
+          ]
+        }
+      ]
+    }
+  ]
 }
