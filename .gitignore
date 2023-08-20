@@ -1,0 +1,12 @@
+# content below from: https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+.idea/.idea.TemplateApp/.idea/.name
+.idea/.idea.TemplateApp/.idea/encodings.xml
+.idea/.idea.TemplateApp/.idea/indexLayout.xml
+.idea/.idea.TemplateApp/.idea/vcs.xml
+.idea/.idea.TemplateApp/.idea/projectSettingsUpdater.xml
+.idea/.idea.TemplateApp/.idea/workspace.xml
