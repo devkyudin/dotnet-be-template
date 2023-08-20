@@ -4,9 +4,10 @@
 .AppleDouble
 .LSOverride
 
-.idea/.idea.TemplateApp/.idea/.name
-.idea/.idea.TemplateApp/.idea/encodings.xml
-.idea/.idea.TemplateApp/.idea/indexLayout.xml
-.idea/.idea.TemplateApp/.idea/vcs.xml
-.idea/.idea.TemplateApp/.idea/projectSettingsUpdater.xml
-.idea/.idea.TemplateApp/.idea/workspace.xml
+.idea/
+.vs/
+.vscode/
+.hg
+bin
+bin.snk
+obj
