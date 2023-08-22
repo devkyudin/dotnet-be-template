@@ -3,13 +3,13 @@
 ## TemplateApp solution structure
 
 - `src`
+    - [TemplateApp.Presentation](#TemplateAppPresentation)
     - [TemplateApp.ExternalServices](#TemplateAppExternalServices)
-    - [TemplateApp.Abstractions`](#TemplateAppAbstractions)
+    - [TemplateApp.Abstractions](#TemplateAppAbstractions)
     - [TemplateApp.Domain](#TemplateAppDomain)
     - [TemplateApp.DomainServices](#TemplateAppDomainServices)
     - [TemplateApp.GenericSubdomain](#TemplateAppGenericSubdomain)
     - [TemplateApp.Infrastructure](#TemplateAppInfrastructure)
-    - [TemplateApp.Presentation](#TemplateAppPresentation)
     - [TemplateApp.Repository](#TemplateAppRepository)
 - `tests`
     - [TemplateApp.IntegrationTests](#TemplateAppIntegrationTests)
@@ -35,13 +35,32 @@ purposes of each project for better understanding what is happening before creat
 
 #### TemplateApp.Presentation
 
-#### TemplateApp.ExternalServices
+`Presentation` project contains all things to launch the application and to start serving external calls. Typically you
+can find here:
 
-#### TemplateApp.Abstractions
+- `Program.cs` file with the Main entrypoint of app, in which web-host is created, configured and started.
+- `Startup.cs` file with app configuration (Controller mappings, DI-container configuration, Options bindings etc.)
+- `appsettings.*ENVIRONMENT*.json` files with where you can configure app for each environment differently
+- `Controllers` folder with Http/gRPC endpoint controllers
+- `EventListeners` folder with Kafka topic / RabbitMq queue / other event bus listeners
+- `Jobs` folder with Quartz.Net / Hangfire scheduled jobs
+
+The main purpose of this layer is to separate API from core logic, so the only thing you allowed to do here is to catch
+external requests/signals for converting them into DTOs and passing them to the DomainServices level.
+
+#### TemplateApp.DomainServices
+
+`DomainServices` project contains application's services and command/query handlers. In this layer you can instantiate
+domain objects and interact with `Repository`/`ExternalServices` layers if you need.
 
 #### TemplateApp.Domain
 
-#### TemplateApp.DomainServices
+`Domain` project contains domain (core) objects of this application. You should create rich/anemic domain models of your
+app right here.
+
+#### TemplateApp.ExternalServices
+
+#### TemplateApp.Abstractions
 
 #### TemplateApp.GenericSubdomain
 
