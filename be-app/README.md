@@ -55,41 +55,96 @@ domain objects and interact with `Repository`/`ExternalServices` layers if you n
 
 #### TemplateApp.Domain
 
-`Domain` project contains domain (core) objects of this application. You should create rich/anemic domain models of your
-app right here.
-
-#### TemplateApp.ExternalServices
-
-#### TemplateApp.Abstractions
-
-#### TemplateApp.GenericSubdomain
-
-#### TemplateApp.Infrastructure
+`Domain` project contains domain (core) objects of this application. You should store all rich/anemic domain models of
+your app right here.
 
 #### TemplateApp.Repository
 
+`Repository` project contains contracts of internal services such as databases/Kafka topics/caches/other resources which
+are owned and managed by the application. It is preferable to use objects from `Domain` layer in repository contracts.
+
+#### TemplateApp.Infrastructure
+
+`Infrastructure` project contains an implementation of `Repository` contracts. Database registration, tricky
+LUA-scripts, data bus event producers, SQL queries - all that stuff should be in this layer.
+
+#### TemplateApp.ExternalServices
+
+`ExternalServices` project contains contracts of external services such as APIs/databases/RabbitMq queues/other
+resources which are NOT owned and NOT managed by the application. It is preferable to create a separate project for each
+external service you need.
+
+#### TemplateApp.Abstractions
+
+`Abstractions` project contains contracts of the application which other systems might use. All of your `.proto`
+contracts, `JSON` and `WSDL` schemas should be here. You also may create extra classes/constants if you need and publish
+this layer as a NuGet package so other .NET applications would be able to use it for their purposes.
+
+#### TemplateApp.GenericSubdomain
+
+`GenericSubdomain` contains general classes and handy extensions that can be used across all solution. You can store
+here `...Options` classes, `IEnumerable` and `DateTime` extensions etc.
+
 ### tests
 
-#### TemplateApp.IntegrationTests
+This folder contains all things related to tests. And tests themself of course.
 
 #### TemplateApp.Testing
 
+`Testing` project contains general things for Unit and Integration tests: bootstrap, external client mocks, fixtures,
+database
+creators/cleaners/migration runners, Kafka admin clients etc. It is preferable to create here TemplateAppTestsBase class
+and inherit your integration tests class from it
+
 #### TemplateApp.UnitTests
 
-### common
+`UnitTests` project contains test cases for your domain logic. Here you can write test cases for your domain services
+and objects.
 
-#### .gitignore
+#### TemplateApp.IntegrationTests
 
-#### Directory.Build.props
-
-#### Directory.Packages.props
-
-#### infrastructure-services.yml
-
-#### infrastructure-tools.yml
-
-#### README.md
+`IntegrationTests` project contains test cases for your whole app. This is an excellent place to make API calls,
+send events and check a whole way from request deserialization to SQL query execution.
 
 ### benchmarks
 
+This folder contains projects, contracts and extensions for benchmark purposes.
+
 #### TemplateApp.Benchmarks
+
+`Benchmarks` project is the main project where you can find application benchmarks and write your own.
+
+### common
+
+This folder contains files that are cannot be fitted into other folders but you may need for some other
+purposes (`gitlab-ci.yml`, team-shared `.editorconfig` file, `README` `docker-compose` files etc)
+
+#### .gitignore
+
+Default ignore instructions from Microsoft
+
+#### Directory.Build.props
+
+`One file to build them all`. You can use one file to configure build for all of your projects inside a
+solution.
+
+#### Directory.Packages.props
+
+Central Package Management feature has been released! Finally you don't need to mess with another update of
+Newtonsoft.Json/Automapper in every project - you can manage all packages in one file.
+
+#### infrastructure-services.yml
+
+`docker-compose` file with internal services that are used and managed by the application.
+Run `docker-compose up -d -f infrastructure-services.yml` and use these services for local development/integration tests
+
+#### infrastructure-tools.yml
+
+`docker-compose` file with tools for internal services from `infrastructure-services`. It is unnecessary to up these
+tools, especially if you have your own preferred ways to manage databases/message brokers/ cache clusters, but sometimes
+you don't want to search and install another 'Best tool for gRPC service inspection', so you can
+run `docker-compose up -d -f infrastructure-tools.yml` and get tools that are used by your team ASAP
+
+#### README.md
+
+Hello there.
