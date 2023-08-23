@@ -116,7 +116,7 @@ This folder contains projects, contracts and extensions for benchmark purposes.
 
 ### common
 
-This folder contains files that are cannot be fitted into other folders but you may need for some other
+This is a solution folder, not a physical! It contains files that are cannot be fitted into other folders but you may need for some other
 purposes (`gitlab-ci.yml`, team-shared `.editorconfig` file, `README` `docker-compose` files etc)
 
 #### .gitignore
