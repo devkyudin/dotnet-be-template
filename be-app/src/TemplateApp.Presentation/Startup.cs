@@ -4,14 +4,9 @@ using TemplateApp.Infrastructure;
 
 namespace TemplateApp.Presentation;
 
-public class Startup
+public class Startup(IConfiguration configuration)
 {
-	public Startup(IConfiguration configuration)
-	{
-		Configuration = configuration;
-	}
-
-	public IConfiguration Configuration { get; }
+	public IConfiguration Configuration { get; } = configuration;
 
 	public void ConfigureServices(IServiceCollection serviceCollection)
 	{
